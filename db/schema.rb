@@ -48,7 +48,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_17_105031) do
     t.string "name", limit: 50, null: false
     t.string "photo"
     t.string "bio", limit: 500
-    t.integer "PostsCounter", default: 0
+    t.integer "posts_counter", default: 0
   end
 
   add_foreign_key "comments", "posts"

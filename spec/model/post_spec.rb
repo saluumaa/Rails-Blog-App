@@ -13,12 +13,12 @@ RSpec.describe Post, type: :model do
     end
 
     it 'is not valid without a text' do
-      subject.text = nil
+      subject.title = nil
       expect(subject).to_not be_valid
     end
 
     it 'is not valid if the text is longer than 250 characters' do
-      subject.text = 'a' * 251
+      subject.title = 'a' * 251
       expect(subject).to_not be_valid
     end
 

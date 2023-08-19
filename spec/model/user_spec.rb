@@ -23,7 +23,7 @@ RSpec.describe User, type: :model do
       expect(subject).to_not be_valid
     end
 
-    it 'returns the count of posts in descending order' do
+    it 'returns the three most recent posts' do
       user = User.create(name: 'Saluum', photo: 'https://example.com/photo.jpg', bio: 'Hello, I am Saluum.')
 
       Post.create(title: 'First Post', text: 'This is my first post', author: user)

@@ -26,11 +26,13 @@ RSpec.describe User, type: :model do
     it 'returns the three most recent posts' do
       user = User.create(name: 'Saluum', photo: 'https://example.com/photo.jpg', bio: 'Hello, I am Saluum.')
 
-      Post.create(title: 'First Post', text: 'This is my first post', author: user)
-      Post.create(title: 'Second Post', text: 'This is my second post', author: user)
-      Post.create(title: 'Third Post', text: 'This is my third post', author: user)
+      post1 = Post.create(title: 'First Post', text: 'This is my first post', author: user)
+      post2 = Post.create(title: 'Second Post', text: 'This is my second post', author: user)
+      post3 = Post.create(title: 'Third Post', text: 'This is my third post', author: user)
 
-      expect(user.posts_counter).to eq(3)
+      expected_posts = [post3, post2, post1]
+
+      expect(user.three_most_recent_posts).to eq(expected_posts)
     end
   end
 end

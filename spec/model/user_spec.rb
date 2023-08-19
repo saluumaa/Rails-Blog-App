@@ -29,8 +29,10 @@ RSpec.describe User, type: :model do
       post1 = Post.create(title: 'First Post', text: 'This is my first post', author: user)
       post2 = Post.create(title: 'Second Post', text: 'This is my second post', author: user)
       post3 = Post.create(title: 'Third Post', text: 'This is my third post', author: user)
+      post4 = Post.create(title: 'fourth post', text: 'This is my fourth post', author: user)
+      post5 = Post.create(title: 'fifth Post', text: 'This is my fifth post', author: user)
 
-      expected_posts = [post3, post2, post1]
+      expected_posts = [post5, post4, post3]
 
       expect(user.three_most_recent_posts).to eq(expected_posts)
     end

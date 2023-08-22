@@ -19,7 +19,6 @@ RSpec.describe 'Posts', type: :request do
   end
 
   describe 'GET /users/:user_id/posts/:id' do
-    # let(:post) { Post.create!(title: 'Salma Hassan', text: 'This is my text') }
 
     it 'renders a successful response' do
       get user_post_path(1, 3)

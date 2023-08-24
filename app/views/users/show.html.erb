@@ -1,1 +1,31 @@
-<p> Here is a list of user by id </p>
+<div class="container">
+    <div class="user-info">
+    <div class="user-photo user-border">
+    <img src="<%= @user.photo %>" alt="user photo" />
+    </div>
+    <div class="user-name user-border">
+    <p><%= @user.name %></p>
+    <p class="post-number">number of posts: <%= @user.posts.count %></p>
+    </div>
+    </div>
+
+    <div class= "bio user-border">
+    <p><%= @user.bio %></p>
+    </div>
+
+    <div class="posts">
+    <% @user.posts.each do |post| %>
+        <div class="single-post user-border">
+        <a href="/users/<%= @user.id %>/posts/<%= post.id %>">
+        <h3><%= post.title %></h3>
+        <p><%= post.text %></p>
+        <div class="post-number">
+        <span class="post-number">comments: <%= post.comments.count %>,
+        likes: <%= post.likes.count %></span>
+        </div>
+        </a>
+        </div>
+    <% end %>
+    <a href="<%=@user.id%>/posts/" class="button">See all posts</a>
+    </div>
+</div>

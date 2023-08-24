@@ -1,1 +1,31 @@
-<p>Here is a list of posts of users with the comments </p>
+<div class="container">
+    <div class="user-info">
+        <div class="user-photo user-border">
+        <img src="<%= @user.photo %>" alt="user photo" />  
+        </div>
+        <div class="user-name user-border">
+        <p><%= @user.name %></p>
+        <p class="post-number"> number of posts: <%= @user.posts.count %></p>
+        </div>
+    </div>
+    <% @posts.each do |post| %>
+        <div class="single-post user-border">
+        <a href="./<%= post.id %>">
+        <h3><%= post.title %></h3>
+        <p><%= post.text %></p>
+        <div class="post-info">
+        <span class="post-number">comments <%= post.comments_counter %>, likes <%= post.likes_counter %></span>
+        </div>
+        </a>
+        </div>
+
+        <div class="comments">
+        <% post.five_recent_comments.each do |comment| %>
+            <div class="single-comment">
+            <span><%= comment.author.name %> : <%= comment.text %></span>
+            </div>
+        <% end %>
+        </div>
+    <% end %>
+    <button class="button pagination">pagination</button>
+</div>

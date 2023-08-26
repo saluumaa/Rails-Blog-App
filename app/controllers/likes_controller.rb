@@ -7,7 +7,7 @@ class LikesController < ApplicationController
     if @like.save
       redirect_to user_post_path(@user, @post), notice: 'Post liked!'
     else
-      redirect_to user_post_path(@user, @post), alert: 'Failed to like the post.'
+      redirect_to user_post_path(@user, @post), alert: 'not able to like this post.'
     end
   end
 
@@ -16,10 +16,10 @@ class LikesController < ApplicationController
     @post = Post.find(params[:id])
 
     if current_user.likes.where(post: @post).exists?
-      redirect_to user_post_path(@user, @post), alert: 'You have already liked this post.'
+      redirect_to user_post_path(@user, @post), alert: 'you liked this post.'
     else
       @post.increment!(:likes_counter)
-      redirect_to user_post_path(@user, @post), notice: 'Post liked!'
+      redirect_to user_post_path(@user, @post), notice: 'successcfull!'
     end
   end
 end

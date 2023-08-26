@@ -10,11 +10,12 @@
     </div>
     <% @posts.each do |post| %>
         <div class="single-post user-border">
-        <a href="./<%= post.id %>">
+        <a href="/users/<%= @user.id %>/posts/<%= post.id %>">
         <h3><%= post.title %></h3>
         <p><%= post.text %></p>
-        <div class="post-info">
-        <span class="post-number">comments <%= post.comments_counter %>, likes <%= post.likes_counter %></span>
+        <div class="post-number">
+        <span>comments <%= post.comments.count %>, </span>
+        <span>likes <%= post.likes_counter%></span>
         </div>
         </a>
         </div>

@@ -14,18 +14,18 @@
     </div>
 
     <div class="posts">
-    <% @user.three_most_recent_posts.each do |post| %>
-        <div class="single-post user-border">
-        <a href="/users/<%= @user.id %>/posts/<%= post.id %>">
+  <% @user.three_most_recent_posts.each do |post| %>
+    <div class="single-post user-border">
+      <a href="/users/<%= @user.id %>/posts/<%= post.id %>">
         <h3><%= post.title %></h3>
         <p><%= post.text %></p>
         <div class="post-number">
-        <span class="post-number">comments: <%= post.comments.count %>,
-        likes: <%= post.likes.count %></span>
+        <span>comments: <%= post.comments.count %>,</span>
+         <span>   likes: <%= post.likes_counter %></span>
         </div>
-        </a>
-        </div>
-    <% end %>
-    <a href="<%=@user.id%>/posts/" class="button">See all posts</a>
+      </a>
     </div>
+  <% end %>
+  <a href="/users/<%= @user.id %>/posts/" class="button">See all posts</a>
+</div>
 </div>

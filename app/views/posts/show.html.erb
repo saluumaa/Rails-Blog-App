@@ -9,7 +9,7 @@
       <div class="post-number">
       <span >
       comments: <%= @post.comments.count %>,
-     <span> likes: <%= @post.likes.count %>
+     <span> likes: <%= @post.likes_counter %>
       </span>
     </div>
     </div>
@@ -24,11 +24,7 @@
     <% end %>
   </div>
   
-  <div class="like-form"
-  <%= form_with model: @like, url: user_post_likes_path(1, @post), scope: :like do |f|%>
-    <%= f.submit "Like" %>
-  <% end %>
-  <button type="button" class="like-button">
-  <%= link_to "Comment", new_user_post_comment_path( post_id: @post.id), { class: "comment-link" } %></button>
+ <%= link_to "Add Comment", new_user_post_comment_path(@user, @post), class: "btn btn-primary m-3" %>
+<%= link_to "Like",  user_post_likes_path(@user, @post), method: :get, class: "btn btn-primary" %>
 </div>
 </div>

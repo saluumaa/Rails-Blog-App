@@ -1,12 +1,12 @@
 require 'rails_helper'
 
-RSpec.describe 'posts show page', type: :feature do
+RSpec.describe 'Post show page', type: :feature do
   let!(:user) { User.create(name: 'Salma', bio: 'I am a software engineer', photo: 'https://i.imgur.com/5FJXZbU.jpg') }
   let!(:post) { Post.create(title: 'My first post', text: 'This is my first post', author_id: user.id) }
   let!(:comment) { Comment.create(text: 'This is my first comment', author_id: user.id, post_id: post.id) }
 
   before do
-    visit user_post_path(post.id, user.id)
+    visit user_post_path(user, post)
   end
 
   it 'displays the users title' do

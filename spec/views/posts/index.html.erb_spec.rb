@@ -29,6 +29,10 @@ RSpec.describe 'posts index page', type: :feature do
     expect(page).to have_content(comment.text)
   end
 
+  it 'displays some of the posts body' do
+    expect(page).to have_content(post.text)
+  end
+
   it 'displays the number of comments the post has' do
     expect(page).to have_content(post.comments.count)
   end
@@ -43,6 +47,6 @@ RSpec.describe 'posts index page', type: :feature do
 
   it 'displays post show page when I click on the post title' do
     click_link post.title
-    expect(page).to have_current_path(user_post_path(post.id, user.id))
+    expect(page).to have_current_path(user_post_path(user.id, post.id))
   end
 end

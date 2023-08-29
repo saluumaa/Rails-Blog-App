@@ -2,10 +2,10 @@ require 'rails_helper'
 
 RSpec.describe 'User show page', type: :feature do
   let!(:user) { User.create(name: 'Salma', bio: 'I am a software engineer', photo: 'https://i.imgur.com/5FJXZbU.jpg') }
-  let!(:post) { Post.create(title: 'My first post', text: 'This is my first post', author_id: user.id) }
-  let!(:post2) { Post.create(title: 'My second post', text: 'This is my second post', author_id: user.id) }
-  let!(:post3) { Post.create(title: 'My third post', text: 'This is my third post', author_id: user.id) }
-  let!(:post4) { Post.create(title: 'My fourth post', text: 'This is my fourth post', author_id: user.id) }
+  let!(:post) { Post.create(title: 'My first post', text: 'This is my first post', author: user) }
+  let!(:post2) { Post.create(title: 'My second post', text: 'This is my second post', author: user) }
+  let!(:post3) { Post.create(title: 'My third post', text: 'This is my third post', author: user) }
+  let!(:post4) { Post.create(title: 'My fourth post', text: 'This is my fourth post', author: user) }
   before do
     visit user_path(user)
   end
@@ -29,6 +29,12 @@ RSpec.describe 'User show page', type: :feature do
   it 'displays the see all button' do
     expect(page).to have_link('See all posts')
   end
+
+  it 'displays the posts show page when clicking the users posts' do
+    click_link post2.title
+    expect(current_path).to eq(user_post_path(user, post2))
+  end
+
   it 'displays the posts index page when click see all posts' do
     click_link 'See all posts'
     expect(current_path).to eq "#{user_posts_path(user)}/"

@@ -14,7 +14,7 @@
     </div>
 
     <div class="posts">
-  <% @user.three_most_recent_posts.each do |post| %>
+    <% @user.three_most_recent_posts.each do |post| %>
     <div class="single-post user-border">
       <a href="/users/<%= @user.id %>/posts/<%= post.id %>">
         <h3><%= post.title %></h3>
@@ -26,6 +26,7 @@
       </a>
     </div>
   <% end %>
+  
   <a href="/users/<%= @user.id %>/posts/" class="button">See all posts</a>
 </div>
 </div>

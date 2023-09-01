@@ -21,12 +21,12 @@
     <% end %>
 
   <div class="comments">
-    <% @comments.each do |comment| %>
+    <% @post.comments.each do |comment| %>
       <div class="single-comment">
         <span><%= comment.author.name %> : <%= comment.text %></span>
          <% if can? :destroy, comment %>
           <%= link_to 'Delete Comment', post_comment_path(@post, comment), method: :delete, data: { confirm: 'Are you sure?' } %>
-         <% end %>
+        <% end %>
       </div>
     <% end %>
   </div>

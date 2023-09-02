@@ -142,6 +142,13 @@ To run tests, run the following command:
 - Twitter: [@SalmaHIbrahim20](https://twitter.com/SalmaHIbrahim20)
 - LinkedIn: [Salma ibrahim](https://www.linkedin.com/in/salma-ibrahim-78bb5a14a/)
 
+
+👤 **Musangamfura Emmmanuel**
+
+- [GitHub](https://github.com/musangamfure)
+- [Twitter](https://twitter.com/musangamfure)
+- [LinkedIn](https://www.linkedin.com/in/musangamfurae)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- FUTURE FEATURES -->

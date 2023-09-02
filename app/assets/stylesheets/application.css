@@ -85,3 +85,74 @@ a {
   padding: 10px;
   gap: 50%;
 }
+
+/* ------------- devise styling ----------------------- */
+
+.devise-container {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  padding: 2%;
+  background-color: #002924;
+  max-width: 40%;
+  margin: 10% auto 0;
+  border-radius: 8px;
+  box-shadow: 2px 2px 11px rgba(112, 0, 0, 0.3);
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.devise-container input::placeholder {
+  color: grey;
+}
+
+.devise-container a:hover {
+  color: wheat;
+}
+
+.devise-container input {
+  width: 250px;
+  display: flex;
+  border: 1px solid white;
+  border-radius: 5px;
+  padding: 5px;
+  font-size: 1.1rem;
+}
+
+#user_remember_me {
+  width: auto;
+  margin-right: 10px;
+}
+
+.remember {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.remember-me-text {
+  flex: 1;
+}
+
+.actions input {
+  border-radius: 5px;
+  background: rgb(0, 46, 0);
+  border: 0;
+  color: white;
+  font-size: 1.1rem;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}

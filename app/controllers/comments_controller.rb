@@ -1,4 +1,5 @@
 class CommentsController < ApplicationController
+  load_and_authorize_resource
   def new
     @comment = Comment.new
     @post = Post.find(params[:post_id])
@@ -12,6 +13,26 @@ class CommentsController < ApplicationController
 
     redirect_to user_posts_path(@user, @post)
   end
+
+  # def destroy
+  #   @comment = Comment.find(params[:id])
+    # # authorize! :destroy, @comment
+
+    # @comment.destroy
+    # redirect_to root_path, notice: 'Comment was successfully deleted.'
+    # respond_to(&:turbo_stream)
+
+    # @comment = Comment.find(params[:id])
+    # authorize! :destroy, @comment
+
+    # @comment.destroy
+    # redirect_to root_path, notice: 'Comment was successfully deleted.'
+  # end
+
+  def destroy
+      @comment.destroy
+      redirect_to user_post_path(@user, @post), notice: 'Comment was successfully deleted.'
+   end
 
   private
 

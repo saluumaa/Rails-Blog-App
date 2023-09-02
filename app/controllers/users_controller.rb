@@ -7,4 +7,6 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @posts = @user.posts.includes(:comments)
   end
+
+
 end
